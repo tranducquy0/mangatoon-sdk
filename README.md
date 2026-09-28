@@ -84,17 +84,53 @@ async for page in mt.iter_browse(type=ContentType.NOVEL, max_pages=5):
 
 ## Paywalled chapters
 
-Paid episodes raise `PaymentRequired` rather than being silently skipped. This
-SDK does not bypass paywalls.
+This SDK does not bypass paywalls, and never tries. A locked episode reports
+itself as `NotAvailable` rather than failing with a generic error, and the
+`looks_locked` flag records how confident the SDK is about that reading.
 
 ```python
-from mangatoon import PaymentRequired
+from mangatoon import NotAvailable, PaymentRequired
 
 try:
     chapter = await mt.get_novel_chapter(ep_id)
+except NotAvailable as exc:
+    if exc.looks_locked:
+        print("locked, or not published yet")
 except PaymentRequired:
-    ...
+    print("flagged as paid with no readable payload")
 ```
+
+The API reports a locked episode the same way as a nonexistent one — `status:
+"error"` with `error_code: 404` and the message *"This episode is not ready for
+online right now."* — so the two cannot be separated with certainty. That is
+why the exception carries `looks_locked` instead of asserting the reason.
+`PaymentRequired` is reserved for the rarer case where the API returns a
+successful response that is flagged `is_fee` yet carries no payload.
+
+`episode.is_fee` marks a paywalled chapter up front, so you can filter an
+episode list without triggering any of this:
+
+```python
+episodes = await mt.episodes(content_id)
+free = [e for e in episodes if not e.is_fee]
+```
+
+## Command line
+
+Installing the package also provides a `mangatoon` command covering the same
+operations, with `--json` for scripting:
+
+```bash
+mangatoon search "romance" --type novel
+mangatoon detail 6067953
+mangatoon chapters 6067953              # $ marks a paywalled episode
+mangatoon read 4209230 --kind chat
+mangatoon pages 5150000 --download --output ./ch1
+mangatoon --json browse --type comic --order new | jq '.[].title'
+```
+
+Exit codes: `0` ok, `2` bad arguments, `3` locked or unavailable, `4` origin
+unreachable, `5` API or transport error, `7` no results.
 
 ## Network reachability
 
@@ -110,6 +146,27 @@ MangaToon(transport="auto")     # default: detect at runtime
 
 Check which one is in use via `mt.active_transport_name`. The rate limiter
 defaults to 1 request/second; raise it only if you know the origin allows more.
+
+### A caveat about proxies
+
+The public proxies this SDK falls back to are a best-effort convenience, not
+infrastructure. JSON endpoints usually work, but chapter payloads go through
+free CORS proxies that **throttle aggressively**; they rotate through
+`DEFAULT_BINARY_PROXIES` and can still return `429` for every candidate. A
+`TransportError` naming each proxy it tried is the expected symptom, and the
+fix is to wait, fetch fewer episodes, or supply your own:
+
+```python
+MangaToon(transport="proxy", binary_proxies=("https://your-proxy/?url=",))
+```
+
+Prefer `transport="direct"` on a network that can reach the origin — it is both
+faster and free of these limits. Comic page images also route through the
+transport, so `mt.fetch_bytes(url)` works behind a proxy where a bare
+`httpx.get` would not.
+
+Proxied requests deliberately omit the browser `User-Agent` used for direct
+access: the read proxy challenges browser-like agents.
 
 ## How the API works
 

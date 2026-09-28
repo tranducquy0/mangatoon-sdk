@@ -218,7 +218,8 @@ class MangaToon:
                 The richer of the two decodes into ``paragraphs``.
 
         Raises:
-            PaymentRequired: If the episode is paywalled.
+            NotAvailable: If the episode is locked or unpublished.
+            PaymentRequired: If it is flagged paid yet carries no payload.
         """
         return await self._api.get_novel_chapter(episode_id, markdown=markdown)
 
@@ -228,7 +229,8 @@ class MangaToon:
         Chat stories are API-only; there is no web reader to scrape.
 
         Raises:
-            PaymentRequired: If the episode is paywalled.
+            NotAvailable: If the episode is locked or unpublished.
+            PaymentRequired: If it is flagged paid yet carries no payload.
         """
         return await self._api.get_chat_chapter(episode_id)
 
@@ -238,7 +240,8 @@ class MangaToon:
         The returned URLs need no decryption; download them as-is.
 
         Raises:
-            PaymentRequired: If the episode is paywalled.
+            NotAvailable: If the episode is locked or unpublished.
+            PaymentRequired: If it is flagged paid yet carries no payload.
         """
         return await self._api.get_comic_pages(episode_id)
 
@@ -247,6 +250,15 @@ class MangaToon:
     async def comments(self, content_id: int, *, page: int = 1, limit: int = 20) -> list[Comment]:
         """Reader comments for a series."""
         return await self._api.comments(content_id, page=page, limit=limit)
+
+    async def fetch_bytes(self, url: str) -> bytes:
+        """Fetch a CDN URL through the configured transport.
+
+        Comic page images are public CDN files that need no signing, but they
+        live on the same hosts as the API, so they go through the transport:
+        that keeps them working when the origin needs a proxy.
+        """
+        return await self._api._transport.get_bytes(url, {})
 
     async def aclose(self) -> None:
         """Release the underlying HTTP connections."""

@@ -302,7 +302,8 @@ class Api:
                 Paragraphs come from the plain payload either way.
 
         Raises:
-            PaymentRequired: If the episode is paywalled.
+            NotAvailable: If the episode is locked or unpublished.
+            PaymentRequired: If it is flagged paid yet carries no payload.
         """
         meta = await self._fiction_meta(episode_id)
         plain_url = meta.get("data")
@@ -331,7 +332,8 @@ class Api:
         their text.
 
         Raises:
-            PaymentRequired: If the episode is paywalled.
+            NotAvailable: If the episode is locked or unpublished.
+            PaymentRequired: If it is flagged paid yet carries no payload.
         """
         meta = await self._fiction_meta(episode_id)
         url = meta.get("data")
@@ -349,7 +351,8 @@ class Api:
         no decryption.
 
         Raises:
-            PaymentRequired: If the episode is paywalled.
+            NotAvailable: If the episode is locked or unpublished.
+            PaymentRequired: If it is flagged paid yet carries no payload.
         """
         url = self._url("/api/cartoons/pictures", {"id": episode_id})
         payload = await self._transport.get_json(url, api_headers())

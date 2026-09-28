@@ -19,6 +19,7 @@ import asyncio
 import time
 from types import TracebackType
 from typing import Any, Protocol, Sequence, runtime_checkable
+from urllib.parse import quote
 
 import httpx
 
@@ -37,11 +38,23 @@ USER_AGENT = (
     "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
 
+#: Read proxies run bot protection that challenges browser-like User-Agents but
+#: passes plain client agents. Requests to a proxy therefore use this instead of
+#: ``USER_AGENT``; the origin itself is unaffected either way.
+PROXY_USER_AGENT = "mangatoon-sdk/0.1 (+https://github.com/example/mangatoon-sdk)"
+
 #: Free read proxy able to return a JSON body as text.
 DEFAULT_TEXT_PROXY = "https://r.jina.ai/"
 
-#: Free CORS proxy able to return arbitrary binary bodies intact.
-DEFAULT_BINARY_PROXY = "https://api.cors.lol/?url="
+#: Free CORS proxies able to return arbitrary binary bodies intact. Each ends
+#: with its own parameter name. Tried in rotation; the public ones throttle
+#: aggressively, so having several matters when fetching many chapters.
+DEFAULT_BINARY_PROXIES: tuple[str, ...] = (
+    "https://api.cors.lol/?url=",
+    "https://api.codetabs.com/v1/proxy?quest=",
+    "https://corsproxy.io/?url=",
+    "https://api.allorigins.win/raw?url=",
+)
 
 RETRY_STATUS = frozenset({408, 425, 429, 500, 502, 503, 504})
 
@@ -94,9 +107,9 @@ class _BaseTransport:
     @property
     def client(self) -> httpx.AsyncClient:
         if self._client is None:
-            self._client = httpx.AsyncClient(
-                timeout=self._timeout, follow_redirects=True, headers=default_headers()
-            )
+            # No default User-Agent: each transport sets the right one per
+            # destination, and a client-level default would override that.
+            self._client = httpx.AsyncClient(timeout=self._timeout, follow_redirects=True)
             self._owns_client = True
         return self._client
 
@@ -125,10 +138,8 @@ class _BaseTransport:
             else:
                 if response.status_code not in RETRY_STATUS:
                     return response
-                last = TransportError(
-                    f"HTTP {response.status_code}", url=url
-                )
-                response.close()
+                last = TransportError(f"HTTP {response.status_code}", url=url)
+                await response.aclose()
 
             if attempt < self._max_retries:
                 await asyncio.sleep(self._backoff**attempt)
@@ -212,13 +223,26 @@ class ProxyTransport(_BaseTransport):
         self,
         *,
         text_proxy: str | None = DEFAULT_TEXT_PROXY,
-        binary_proxy: str | None = DEFAULT_BINARY_PROXY,
+        binary_proxies: Sequence[str] | None = None,
         max_retries: int = 3,
         **kwargs: Any,
     ) -> None:
         super().__init__(max_retries=max_retries, **kwargs)
         self._text_proxy = text_proxy
-        self._binary_proxy = binary_proxy
+        self._binary_proxies = tuple(
+            binary_proxies if binary_proxies is not None else DEFAULT_BINARY_PROXIES
+        )
+        # Round-robin start point, so bursts spread across proxies.
+        self._binary_cursor = 0
+        self._binary_cursor_lock = asyncio.Lock()
+
+    @property
+    def proxy_headers(self) -> dict[str, str]:
+        """Headers for proxied requests.
+
+        Deliberately not a browser User-Agent: read proxies challenge those.
+        """
+        return {"User-Agent": PROXY_USER_AGENT, "Accept": "*/*"}
 
     def _via_text(self, url: str) -> str:
         if not self._text_proxy:
@@ -228,52 +252,107 @@ class ProxyTransport(_BaseTransport):
         return f"{self._text_proxy}{url}"
 
     def _via_binary(self, url: str) -> str:
-        if not self._binary_proxy:
+        if not self._binary_proxies:
             raise DirectAccessBlocked(
                 "origin is unreachable and no binary proxy is configured", url=url
             )
-        separator = "&" if "?" in self._binary_proxy else ""
-        return f"{self._binary_proxy}{separator}url={url}"
+        template = self._binary_proxies[0]
+        separator = "&" if "?" in template else ""
+        return f"{template}{separator}url={url}"
+
+    async def _next_binary_url(self, url: str) -> list[str]:
+        """Candidate proxied URLs for ``url``, one per configured proxy.
+
+        Rotated on every call so a long chapter run spreads load instead of
+        hammering whichever proxy answers first.
+        """
+        if not self._binary_proxies:
+            raise DirectAccessBlocked(
+                "origin is unreachable and no binary proxy is configured", url=url
+            )
+        async with self._binary_cursor_lock:
+            start = self._binary_cursor % len(self._binary_proxies)
+            self._binary_cursor += 1
+        ordered = self._binary_proxies[start:] + self._binary_proxies[:start]
+
+        candidates: list[str] = []
+        for template in ordered:
+            # Every template ends in its own parameter name ("?url=" or
+            # "?quest="), so the value is appended directly. Encoding is uniform:
+            # some proxies double-decode, others pass it through raw.
+            candidates.append(f"{template}{quote(url, safe='')}")
+        return candidates
 
     async def is_reachable(self) -> bool:
         try:
             await self.client.get(
                 self._via_text("https://sg.mangatoon.mobi/"),
-                headers=default_headers(),
-                timeout=20.0,
+                headers=self.proxy_headers,
+                timeout=30.0,
             )
         except httpx.HTTPError:
             return False
         return True
 
+    async def _send_proxied(self, url: str, headers: dict[str, str]) -> httpx.Response:
+        """Send through a proxy, forcing the proxy-safe User-Agent."""
+        return await self._send(url, {**headers, "User-Agent": PROXY_USER_AGENT})
+
     async def get_json(self, url: str, headers: dict[str, str]) -> Any:
         last: Exception | None = None
         for attempt in range(self._max_retries + 1):
-            response = await self._send(self._via_text(url), headers)
+            response = await self._send_proxied(self._via_text(url), headers)
             text = response.text
-            # The text proxy signals throttling in-band, not with a status code.
-            if "RateLimit" in text or "429 Too Many Requests" in text:
-                last = TransportError("read proxy rate limited", url=url)
+            try:
+                return _parse_json_text(text, url)
+            except APIError as exc:
+                # The text proxy reports throttling in-band: it answers 200 with
+                # a notice instead of a status. Only a *failed* parse can be
+                # throttling, so real payloads mentioning rate limits are safe.
+                if not _is_rate_limited(text):
+                    raise
+                last = exc
                 if attempt < self._max_retries:
                     await asyncio.sleep(3.0 + 4.0 * attempt)
                     continue
-            return _parse_json_text(text, url)
+                raise TransportError(
+                    "the read proxy kept rate limiting this request; retry later "
+                    "or use transport='direct'",
+                    url=url,
+                ) from exc
         raise TransportError(f"read proxy kept failing: {last}", url=url)
 
     async def get_bytes(self, url: str, headers: dict[str, str]) -> bytes:
-        last: Exception | None = None
-        for attempt in range(self._max_retries + 1):
-            response = await self._send(self._via_binary(url), headers)
+        """Fetch a binary payload, trying each configured proxy in turn.
+
+        Public CORS proxies throttle aggressively, so a single one failing is
+        expected rather than exceptional. Each candidate is tried once; the first
+        body that looks like a real payload wins.
+        """
+        candidates = await self._next_binary_url(url)
+        failures: list[str] = []
+
+        for candidate in candidates:
+            try:
+                response = await self._send_proxied(candidate, headers)
+            except TransportError as exc:
+                failures.append(f"{_proxy_host(candidate)}: {exc}")
+                continue
+
             body = response.content
             if response.status_code == 200 and len(body) > 32:
                 return body
-            last = TransportError(
-                f"binary proxy returned HTTP {response.status_code}, {len(body)} bytes",
-                url=url,
+            failures.append(
+                f"{_proxy_host(candidate)}: HTTP {response.status_code}, {len(body)} bytes"
             )
-            if attempt < self._max_retries:
-                await asyncio.sleep(3.0 + 4.0 * attempt)
-        raise TransportError(f"binary proxy kept failing: {last}", url=url)
+
+        raise TransportError(
+            "all binary proxies failed for this payload. Tried: "
+            + "; ".join(failures)
+            + ". Public CORS proxies are rate limited; retry later, lower "
+            "max_pages, or pass your own binary_proxies.",
+            url=url,
+        )
 
 
 class AutoTransport:
@@ -355,6 +434,30 @@ async def _reachable(transport: Any) -> bool:
         return False
 
 
+_RATE_LIMIT_MARKERS = (
+    "ratelimit",
+    "rate limit",
+    "429 too many requests",
+    "429 error",
+)
+
+
+def _proxy_host(url: str) -> str:
+    """Host of a proxied URL, for error messages."""
+    from urllib.parse import urlsplit
+
+    return urlsplit(url).hostname or url
+
+
+def _is_rate_limited(text: str) -> bool:
+    """Whether a read-proxy body reports throttling rather than data.
+
+    The text proxy wraps the origin's response in a markdown envelope, so a 429
+    or 403 from the origin still arrives as an outer ``200``.
+    """
+    return any(marker in text.lower() for marker in _RATE_LIMIT_MARKERS)
+
+
 def _parse_json(response: httpx.Response, url: str) -> Any:
     try:
         return response.json()
@@ -363,10 +466,13 @@ def _parse_json(response: httpx.Response, url: str) -> Any:
 
 
 def _parse_json_text(text: str, url: str) -> Any:
-    """Parse JSON that may be wrapped in markup by a text proxy.
+    """Extract the JSON body from a read-proxy response.
 
-    A read proxy sometimes answers ``200`` with an HTML shell containing the
-    real payload in a ``<pre>`` block, so fall back to extracting that.
+    The text proxy always answers ``200`` and wraps the origin's payload in a
+    markdown envelope, so the JSON may be a bare body, an HTML ``<pre>`` block,
+    or a section after a ``Markdown Content:`` marker. An upstream error also
+    arrives as ``200``, with the real status in the body, so the envelope is
+    checked before falling back to a generic parse failure.
     """
     import json
     import re
@@ -377,19 +483,60 @@ def _parse_json_text(text: str, url: str) -> Any:
     except ValueError:
         pass
 
-    match = re.search(r"<pre[^>]*>(.*?)</pre>", stripped, re.DOTALL)
-    if match:
-        candidate = match.group(1)
+    upstream = _upstream_error(stripped)
+
+    for pattern in (r"<pre[^>]*>(.*?)</pre>", r"(?s)Markdown Content:\s*(\{.*)"):
+        match = re.search(pattern, stripped, re.DOTALL)
+        if not match:
+            continue
+        candidate = match.group(1).strip()
         for unescape in (_unescape, lambda s: s):
             try:
-                return json.loads(unescape(candidate.strip()))
+                payload = json.loads(unescape(candidate))
             except ValueError:
                 continue
+            if not isinstance(payload, dict):
+                return payload
+            if upstream is not None and "status" not in payload:
+                # An error page, not an API envelope. Real API errors always
+                # carry "status", so returning this would hand the caller an
+                # error object disguised as data.
+                break
+            return payload
+
+    if upstream is not None:
+        status, message = upstream
+        raise APIError(
+            f"origin returned {status} via the read proxy: {message or 'no message'}",
+            status=status,
+            payload=stripped[:500],
+        )
 
     raise APIError(
         f"could not locate a JSON body in the response for {url}",
         payload=stripped[:500],
     )
+
+
+def _upstream_error(text: str) -> tuple[int, str] | None:
+    """Read the origin's status out of a proxy envelope, if present."""
+    import re
+
+    match = re.search(r"Target URL returned error (\d+)", text)
+    if not match:
+        return None
+    status = int(match.group(1))
+    message = ""
+    detail = re.search(r"Markdown Content:\s*(\{.*)", text, re.DOTALL)
+    if detail:
+        import json
+
+        try:
+            payload = json.loads(detail.group(1).strip())
+            message = str(payload.get("message") or payload.get("reason") or "")
+        except ValueError:
+            message = ""
+    return status, message
 
 
 def _unescape(text: str) -> str:
