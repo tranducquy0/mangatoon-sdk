@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence
 from urllib.parse import quote
 
 from ._crypto import decrypt
-from ._exceptions import APIError, PaymentRequired, ValidationError
+from ._exceptions import APIError, NotAvailable, PaymentRequired, ValidationError
 from ._models import (
     BrowsePage,
     ChatChapter,
@@ -37,6 +37,10 @@ _FIRST_PAGE = 1
 MAX_LIMIT = 500
 
 
+#: Exact wording the API uses for a locked or unpublished episode.
+LOCKED_MESSAGE = "This episode is not ready for online right now."
+
+
 def _unwrap(payload: Any, url: str) -> Any:
     """Return the ``data`` member, raising on an error envelope."""
     if not isinstance(payload, Mapping):
@@ -52,6 +56,26 @@ def _unwrap(payload: Any, url: str) -> Any:
         raise APIError(detail, status=code, code=code, payload=payload)
 
     return payload.get("data")
+
+
+def _guard_unavailable(payload: Mapping[str, Any], episode_id: int) -> None:
+    """Raise :class:`NotAvailable` for the API's locked-episode response.
+
+    A locked episode and a nonexistent id both return ``status: "error"`` with
+    ``error_code: 404`` and no ``data``. The only signal that separates them is
+    the message wording, so ``looks_locked`` reports whether it matched rather
+    than treating the distinction as certain.
+    """
+    if payload.get("status") == "success":
+        return
+    message = str(payload.get("message") or payload.get("readableMessage") or "")
+    if payload.get("error_code") == 404 or "not found" in message.lower() or "not ready" in message.lower():
+        raise NotAvailable(
+            message or "episode is unavailable",
+            episode_id=episode_id,
+            content_id=_as_int(payload.get("content_id")),
+            looks_locked=LOCKED_MESSAGE in message,
+        )
 
 
 def _normalise_page(page: int) -> int:
@@ -105,6 +129,21 @@ class Api:
         url = self._url(path, params)
         payload = await self._transport.get_json(url, api_headers())
         _unwrap(payload, url)  # validate the envelope before reading counters
+        return payload
+
+    async def _get_flat(self, path: str, params: Mapping[str, Any]) -> Mapping[str, Any]:
+        """Fetch an endpoint whose metadata is the response body itself.
+
+        ``/api/fictions/content`` and ``/api/cartoons/pictures`` do not nest
+        their records: the fields sit at the top level and ``data`` holds only
+        the payload URL (or the page list). Unwrapping to ``data`` would discard
+        the metadata.
+        """
+        url = self._url(path, params)
+        payload = await self._transport.get_json(url, api_headers())
+        _unwrap(payload, url)  # validate the envelope
+        if not isinstance(payload, Mapping):
+            raise APIError(f"unexpected response shape for {url}", payload=payload)
         return payload
 
     async def _fetch_payload(self, url: str) -> bytes:
@@ -238,13 +277,16 @@ class Api:
 
     async def _fiction_meta(self, episode_id: int) -> Mapping[str, Any]:
         """Fetch the metadata record that points at a chapter's payload."""
-        meta = await self._get("/api/fictions/content", {"id": episode_id})
-        if not isinstance(meta, Mapping):
-            raise APIError(f"fiction metadata for {episode_id} was not an object")
-        # A fee episode comes back flagged with no payload to read.
-        if meta.get("is_fee") and not meta.get("data"):
-            raise PaymentRequired(episode_id, content_id=_as_int(meta.get("content_id")))
-        return meta
+        url = self._url("/api/fictions/content", {"id": episode_id})
+        payload = await self._transport.get_json(url, api_headers())
+        if not isinstance(payload, Mapping):
+            raise APIError(f"unexpected response shape for {url}", payload=payload)
+        _guard_unavailable(payload, episode_id)
+        _unwrap(payload, url)
+        # A fee episode can also come back flagged with no payload to read.
+        if payload.get("is_fee") and not payload.get("data"):
+            raise PaymentRequired(episode_id, content_id=_as_int(payload.get("content_id")))
+        return payload
 
     async def get_novel_chapter(
         self,
@@ -311,11 +353,16 @@ class Api:
         """
         url = self._url("/api/cartoons/pictures", {"id": episode_id})
         payload = await self._transport.get_json(url, api_headers())
-        data = _unwrap(payload, url)
+        if not isinstance(payload, Mapping):
+            raise APIError(f"unexpected response shape for {url}", payload=payload)
+        _guard_unavailable(payload, episode_id)
+        _unwrap(payload, url)
+        if payload.get("is_fee") and not payload.get("data"):
+            raise PaymentRequired(episode_id, content_id=_as_int(payload.get("content_id")))
+
+        data = payload.get("data")
         if isinstance(data, Mapping):
-            # A single object rather than a list signals a locked episode.
-            if data.get("is_fee") or not data.get("data"):
-                raise PaymentRequired(episode_id, content_id=_as_int(data.get("content_id")))
+            # Defensive: a nested object rather than a list.
             data = data.get("data")
         if not data:
             raise PaymentRequired(episode_id)

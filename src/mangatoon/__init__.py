@@ -30,6 +30,7 @@ from ._exceptions import (
     DecryptionError,
     DirectAccessBlocked,
     MangaToonError,
+    NotAvailable,
     PaymentRequired,
     TransportError,
     ValidationError,
@@ -85,6 +86,7 @@ __all__ = [
     "TransportError",
     "DirectAccessBlocked",
     "PaymentRequired",
+    "NotAvailable",
     "DecryptionError",
     # helpers
     "comic_page_url",

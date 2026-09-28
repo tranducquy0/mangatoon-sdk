@@ -57,16 +57,29 @@ class FakeTransport:
         name: str = "fake",
     ) -> None:
         self.name = name
-        self.json_by_path = json_by_path or {}
+        # Keys may be given as a path ("/api/content/detail") or an endpoint
+        # name ("content/detail"); the latter avoids hardcoding the host.
+        self.json_by_path = {
+            self._normalise(key): value for key, value in (json_by_path or {}).items()
+        }
         self.bytes_by_url = bytes_by_url or {}
         self.default_json = default_json
         self.json_calls: list[str] = []
         self.byte_calls: list[str] = []
         self.closed = False
 
+    @staticmethod
+    def _normalise(key: str) -> str:
+        if not key.startswith("/"):
+            return f"/api/{key}"
+        return key
+
     async def get_json(self, url: str, headers: dict[str, str]) -> Any:
         self.json_calls.append(url)
-        path = url.split("?", 1)[0]
+        # Strip scheme, host and query so keys are plain endpoint paths.
+        from urllib.parse import urlsplit
+
+        path = urlsplit(url).path
         if path in self.json_by_path:
             return self.json_by_path[path]
         if self.default_json is not None:

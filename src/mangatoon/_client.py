@@ -11,6 +11,7 @@ from ._exceptions import (
     DecryptionError,
     DirectAccessBlocked,
     MangaToonError,
+    NotAvailable,
     PaymentRequired,
     TransportError,
     ValidationError,

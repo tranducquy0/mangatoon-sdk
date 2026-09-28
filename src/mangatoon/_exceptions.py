@@ -9,6 +9,7 @@ __all__ = [
     "APIError",
     "ValidationError",
     "PaymentRequired",
+    "NotAvailable",
     "DecryptionError",
 ]
 
@@ -63,6 +64,31 @@ class PaymentRequired(MangaToonError):
         )
         self.episode_id = episode_id
         self.content_id = content_id
+
+
+class NotAvailable(APIError):
+    """The episode exists but its payload is not served anonymously.
+
+    The API answers a locked or not-yet-published episode with
+    ``status: "error"``, ``error_code: 404`` and the message ``"This episode is
+    not ready for online right now."`` — note there is no ``is_fee`` flag and no
+    ``data`` key in that response, so it is indistinguishable from a genuinely
+    missing episode by status alone. :attr:`looks_locked` records that the
+    message matched the known wording, which is a strong but not certain signal.
+    """
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        episode_id: int | None = None,
+        content_id: int | None = None,
+        looks_locked: bool = False,
+    ) -> None:
+        super().__init__(message, status=404, code=404)
+        self.episode_id = episode_id
+        self.content_id = content_id
+        self.looks_locked = looks_locked
 
 
 class DecryptionError(MangaToonError):
