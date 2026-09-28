@@ -1,0 +1,117 @@
+{
+ "status": "success",
+ "timestamp": 1790600727,
+ "data": {
+  "comment_count": 1559,
+  "score": 5,
+  "score_count": 9,
+  "score_threshold": 10,
+  "recommend_ticket_count": 165,
+  "reward_count": 16123,
+  "favorite_count": 1204,
+  "watch_count": 726275,
+  "like_count": 42185,
+  "id": 6067953,
+  "click_url": "mangatoon://contents/detail/6067953",
+  "user_id": 55681826,
+  "fiction_id": 0,
+  "type": 4,
+  "gender": 2,
+  "status": 0,
+  "source": 1,
+  "title": "The Legitimate Heir Doesn’T Want Their Love",
+  "description": "The capital’s biggest scandal—\nThe real young master of the Kang family had been thrown away to the countryside for seventeen years while the fake heir, Jen, lived in luxury.\nWhen Kim Taehyung finally returned, no one welcomed him.\n“We can’t embarrass Jen,” the Kang family said coldly. “To the public, you’re only an adopted son.”\nHis fiancé sneered, “My future partner can only be Jen.”\nTaehyung simply replied,\n“It doesn’t matter.”\nNo one knew the quiet countryside Ore held a terrifying secret—\nSince childhood, he had been able to swap souls with a mysterious rich young master.\nWhile others mocked him as uncultured, Taehyung had already mastered piano, etiquette, academics, and high society through years of soul switching.\nThen, at a banquet, an untouchable Enigma heir walked straight toward him before the shocked crowd.\n“Be mine,” the man said arrogantly. “You’re beautiful enough for me to overlook your background.”\nTaehyung smiled lightly.\n“I suddenly miss my countryside parents.”\n\nMangaToon got authorization from Neveah  to publish this work, the content is the author's own point of view, and does not represent the stand of MangaToon.",
+  "hot_number": 34058,
+  "content_description": "The capital’s biggest scandal—\nThe real young master of the Kang family had been thrown away to the countryside for seventeen years while the fake heir, Jen, lived in luxury.\nWhen Kim Taehyung finally returned, no one welcomed him.\n“We can’t embarrass Jen,” the Kang family said coldly. “To the public, you’re only an adopted son.”\nHis fiancé sneered, “My future partner can only be Jen.”\nTaehyung simply replied,\n“It doesn’t matter.”\nNo one knew the quiet countryside Ore held a terrifying secret—\nSince childhood, he had been able to swap souls with a mysterious rich young master.\nWhile others mocked him as uncultured, Taehyung had already mastered piano, etiquette, academics, and high society through years of soul switching.\nThen, at a banquet, an untouchable Enigma heir walked straight toward him before the shocked crowd.\n“Be mine,” the man said arrogantly. “You’re beautiful enough for me to overlook your background.”\nTaehyung smiled lightly.\n“I suddenly miss my countryside parents.”",
+  "announcement": "MangaToon got authorization from Neveah  to publish this work, the content is the author's own point of view, and does not represent the stand of MangaToon.",
+  "is_mature": false,
+  "image_path": "cartoon-posters/6067953e6d6.webp",
+  "big_image_path": "",
+  "open_episodes_count": 362,
+  "updated_at": 1790081741,
+  "created_at": "2026-05-19 13:16:15",
+  "disable_download": false,
+  "update_days": [],
+  "is_end": false,
+  "is_contribute": true,
+  "price": 0,
+  "age_level": 0,
+  "copyright_type": 0,
+  "first_fee_episode_index": 0,
+  "is_deleted": false,
+  "author": {
+   "id": 0,
+   "user_id": 55681826,
+   "name": "Neveah ",
+   "image_url": "http://up-pic.mangatoon.mobi/userheader/55681826/17894644090.png-s200webp?sign=8ce44274540ae6ef50dcf12bd57254bb&t=6ac3a03b",
+   "click_url": "mangatoon://user-page?userId=55681826",
+   "medals": [
+    {
+     "type": 11,
+     "level": 1,
+     "image_width": 212,
+     "image_height": 80,
+     "image_url": "http://cn-e-pic.itoon.org/for-clients/en_novel_v2_level_1.png"
+    }
+   ],
+   "content_count": 5,
+   "followers_count": 227
+  },
+  "category_id": 60,
+  "category_name": "CP Idol",
+  "parent_category_id": 0,
+  "tags": [
+   {
+    "id": 164,
+    "name": "Taekook",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A4%2C%22tag_id%22%3A164%2C%22order%22%3A%22hot%22%7D&title=Taekook"
+   },
+   {
+    "id": 9,
+    "name": "Boys’ Love",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A4%2C%22tag_id%22%3A9%2C%22order%22%3A%22hot%22%7D&title=Boys%E2%80%99%20Love"
+   }
+  ],
+  "first_episode": {
+   "id": 4209230,
+   "title": "Chapter 1~"
+  },
+  "icon_titles": [
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/icon_hot.png",
+    "format_value": "726.3K"
+   },
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/icon_like.png",
+    "format_value": "42.2K"
+   },
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/episodes.png",
+    "format_value": "362"
+   }
+  ],
+  "subscript": "http://cn-e-pic.mangatoon.mobi/homepage_subscript/icon-chatstory2.png",
+  "subscript_default": "http://cn-e-pic.mangatoon.mobi/homepage_subscript/icon-chatstory2.png",
+  "image_url": "http://cn-e-pic.mangatoon.mobi/cartoon-posters/6067953e6d6.webp",
+  "image_url_without_superscript": "http://cn-e-pic.mangatoon.mobi/cartoon-posters/6067953e6d6.webp",
+  "image_url_with_bottom_left_subscript": "http://cn-e-pic.mangatoon.mobi/cartoon-posters/6067953e6d6.webp-homepageChatnovel2",
+  "big_image_url": null,
+  "badge": {
+   "icon": "http://cn-e-pic.mangatoon.mobi/badge/ranking_tag.png",
+   "title": "CP Idol No.12",
+   "show_in_detail": 1,
+   "click_url": "mangatoon://list-rank?ranking_topic_key=44"
+  },
+  "labels": [
+   {
+    "font_color": "#FA6400",
+    "title": "CP Idol No.12"
+   }
+  ],
+  "share_url": "https://noveltoon.mobi/en/share/6067953?app_id=1&utm_source=app_share&utm_campaign=Share:1:6067953",
+  "feedback_url": "mangatoon://weex/http://cn.e.pic.mangatoon.mobi/weex-js/client/feedback-create-release-v0-0-1477.js",
+  "is_blocked": false
+ }
+}

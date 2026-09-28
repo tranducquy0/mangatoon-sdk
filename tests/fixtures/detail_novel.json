@@ -1,0 +1,118 @@
+{
+ "status": "success",
+ "timestamp": 1790600728,
+ "data": {
+  "comment_count": 3,
+  "score": 5,
+  "score_count": 1,
+  "score_threshold": 10,
+  "recommend_ticket_count": 0,
+  "reward_count": 0,
+  "favorite_count": 8,
+  "watch_count": 8368,
+  "like_count": 4,
+  "id": 6067943,
+  "click_url": "mangatoon://contents/detail/6067943",
+  "user_id": 0,
+  "fiction_id": 0,
+  "type": 2,
+  "gender": 2,
+  "status": 0,
+  "source": 4,
+  "title": "After the Storm, Evelyn",
+  "description": "One hour before her wedding, Evelyn is told the groom is no longer hers. Her sister is pregnant with him — and the whole family expects Evelyn to smile and step aside.\r\n\r\nFive years later she's trapped in a marriage that was a lie from the first day. Her husband still loves the sister who stole her life; he only married Evelyn to stay close to the woman he really wanted. But Evelyn isn't the girl who ran from the altar in tears anymore. She's done crying. She's done being the daughter no one chose. And she has a plan — and a video that will burn it all down.\r\n\r\nWhat she doesn't have is any idea that the ruthless billionaire who's been watching her for five years is about to make her an offer.\r\n\r\nEthan Bennett has money, power, and a reputation that makes men flinch — and he has never forgotten the woman who once talked him back from the edge of a cliff. When Evelyn walks back into his world, he intends to keep her. A two-year contract. No love required. One rule: if she falls pregnant, she's his for good.\r\n\r\nExcept Ethan never planned on keeping it a contract. And Evelyn never planned on being adored.\r\n\r\nAs the family that discarded her comes crawling back — and the sister who ruined her keeps reaching for more — Evelyn discovers that the sweetest revenge isn't ruin. It's rising so high that the people who broke her have to watch her shine.\r\n\r\nThe storm made her cold. He's going to make her believe the sky can clear.\n\nMangaToon got authorization from Itha Sulfiana to publish this work, the content is the author's own point of view, and does not represent the stand of MangaToon.",
+  "hot_number": 3085,
+  "content_description": "One hour before her wedding, Evelyn is told the groom is no longer hers. Her sister is pregnant with him — and the whole family expects Evelyn to smile and step aside.\r\n\r\nFive years later she's trapped in a marriage that was a lie from the first day. Her husband still loves the sister who stole her life; he only married Evelyn to stay close to the woman he really wanted. But Evelyn isn't the girl who ran from the altar in tears anymore. She's done crying. She's done being the daughter no one chose. And she has a plan — and a video that will burn it all down.\r\n\r\nWhat she doesn't have is any idea that the ruthless billionaire who's been watching her for five years is about to make her an offer.\r\n\r\nEthan Bennett has money, power, and a reputation that makes men flinch — and he has never forgotten the woman who once talked him back from the edge of a cliff. When Evelyn walks back into his world, he intends to keep her. A two-year contract. No love required. One rule: if she falls pregnant, she's his for good.\r\n\r\nExcept Ethan never planned on keeping it a contract. And Evelyn never planned on being adored.\r\n\r\nAs the family that discarded her comes crawling back — and the sister who ruined her keeps reaching for more — Evelyn discovers that the sweetest revenge isn't ruin. It's rising so high that the people who broke her have to watch her shine.\r\n\r\nThe storm made her cold. He's going to make her believe the sky can clear.",
+  "announcement": "MangaToon got authorization from Itha Sulfiana to publish this work, the content is the author's own point of view, and does not represent the stand of MangaToon.",
+  "is_mature": false,
+  "image_path": "fictions-posters/6067943c4fe.webp",
+  "big_image_path": "",
+  "open_episodes_count": 121,
+  "updated_at": 1789574400,
+  "created_at": "2026-09-17 11:01:19",
+  "disable_download": false,
+  "update_days": [],
+  "is_end": true,
+  "is_contribute": false,
+  "price": 0,
+  "age_level": 0,
+  "copyright_type": 1,
+  "first_fee_episode_index": 0,
+  "is_deleted": false,
+  "author": {
+   "id": 0,
+   "name": "Itha Sulfiana",
+   "image_url": "http://cn-e-pic.mangatoon.mobi/for-clients/author/author2.png",
+   "click_url": "",
+   "content_count": 0
+  },
+  "category_id": 27,
+  "category_name": "Romance",
+  "parent_category_id": 0,
+  "tags": [
+   {
+    "id": 17,
+    "name": "CEO",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A2%2C%22tag_id%22%3A17%2C%22order%22%3A%22hot%22%7D&title=CEO"
+   },
+   {
+    "id": 96,
+    "name": "Contract Marriage",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A2%2C%22tag_id%22%3A96%2C%22order%22%3A%22hot%22%7D&title=Contract%20Marriage"
+   },
+   {
+    "id": 99,
+    "name": "Revenge",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A2%2C%22tag_id%22%3A99%2C%22order%22%3A%22hot%22%7D&title=Revenge"
+   },
+   {
+    "id": 204,
+    "name": "Love grows over",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A2%2C%22tag_id%22%3A204%2C%22order%22%3A%22hot%22%7D&title=Love%20grows%20over"
+   },
+   {
+    "id": 211,
+    "name": "Regretful Husband",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A2%2C%22tag_id%22%3A211%2C%22order%22%3A%22hot%22%7D&title=Regretful%20Husband"
+   },
+   {
+    "id": 32,
+    "name": "Completed",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A2%2C%22tag_id%22%3A32%2C%22order%22%3A%22hot%22%7D&title=Completed"
+   }
+  ],
+  "first_episode": {
+   "id": 4388679,
+   "title": "Chapter 1"
+  },
+  "icon_titles": [
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/icon_hot.png",
+    "format_value": "8.37K"
+   },
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/icon_like.png",
+    "format_value": "4"
+   },
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/episodes.png",
+    "format_value": "121"
+   }
+  ],
+  "subscript": "http://cn-e-pic.mangatoon.mobi/homepage_subscript/icon-novel2.png",
+  "subscript_default": "http://cn-e-pic.mangatoon.mobi/homepage_subscript/icon-novel2.png",
+  "image_url": "http://cn-e-pic.mangatoon.mobi/fictions-posters/6067943c4fe.webp-posterend6",
+  "image_url_without_superscript": "http://cn-e-pic.mangatoon.mobi/fictions-posters/6067943c4fe.webp",
+  "image_url_with_bottom_left_subscript": "http://cn-e-pic.mangatoon.mobi/fictions-posters/6067943c4fe.webp-homepageFiction2",
+  "big_image_url": null,
+  "share_url": "https://noveltoon.mobi/en/share/6067943?app_id=1&utm_source=app_share&utm_campaign=Share:1:6067943",
+  "feedback_url": "mangatoon://weex/http://cn.e.pic.mangatoon.mobi/weex-js/client/feedback-create-release-v0-0-1477.js",
+  "is_blocked": false
+ }
+}

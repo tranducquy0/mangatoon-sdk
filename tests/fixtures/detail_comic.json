@@ -1,0 +1,124 @@
+{
+ "status": "success",
+ "timestamp": 1790600730,
+ "data": {
+  "comment_count": 197,
+  "score": 5,
+  "score_count": 5,
+  "score_threshold": 10,
+  "recommend_ticket_count": 72,
+  "reward_count": 2638,
+  "favorite_count": 882,
+  "watch_count": 113043,
+  "like_count": 3528,
+  "id": 6121145,
+  "click_url": "mangatoon://contents/detail/6121145",
+  "user_id": 0,
+  "fiction_id": 0,
+  "type": 1,
+  "gender": 0,
+  "status": 0,
+  "source": 0,
+  "title": "Indulgent Gambit",
+  "description": "When Ji Xuan broke up with her ex, Song Zhaoli appeared just in time, as if he had foreseen it. Amidst the swirling snow, Song Zhaoli leaned against his car, a cigarette dangling from his lips, and grinned mischievously: \"Broken up?\" Ji Xuan looked up at him, her gaze cold: \"Broken up isn't your business.\" Later, Ji Xuan married Song Zhaoli. Everyone assumed Ji Xuan had climbed the social ladder. Only Song Zhaoli knew that he had fought his way through countless obstacles, rising from second lead to third.\n\nMangaToon got authorization from Kuaikan Comics to publish this work, the content is the author's own point of view, and does not represent the stand of MangaToon.",
+  "hot_number": 20307,
+  "content_description": "When Ji Xuan broke up with her ex, Song Zhaoli appeared just in time, as if he had foreseen it. Amidst the swirling snow, Song Zhaoli leaned against his car, a cigarette dangling from his lips, and grinned mischievously: \"Broken up?\" Ji Xuan looked up at him, her gaze cold: \"Broken up isn't your business.\" Later, Ji Xuan married Song Zhaoli. Everyone assumed Ji Xuan had climbed the social ladder. Only Song Zhaoli knew that he had fought his way through countless obstacles, rising from second lead to third.",
+  "announcement": "MangaToon got authorization from Kuaikan Comics to publish this work, the content is the author's own point of view, and does not represent the stand of MangaToon.",
+  "is_mature": false,
+  "image_path": "cartoon-posters/6121145b589.webp",
+  "big_image_path": "cartoon-big-images/6121145/0-24fa.webp",
+  "open_episodes_count": 41,
+  "updated_at": 1790525028,
+  "created_at": "2026-08-24 10:30:04",
+  "disable_download": false,
+  "update_days": [
+   1,
+   4
+  ],
+  "is_end": false,
+  "is_contribute": false,
+  "price": 25,
+  "age_level": 0,
+  "copyright_type": 0,
+  "first_fee_episode_index": 16,
+  "is_deleted": false,
+  "author": {
+   "id": 245,
+   "name": "Kuaikan Comics ",
+   "image_url": "http://cn-e-pic.mangatoon.mobi/author-icons/2456136.webp",
+   "click_url": "mangatoon://list?paramsJSONString=%7B%22defined_type%22%3A%22vendor-245%22%7D&title=Kuaikan%20Comics",
+   "content_count": 207
+  },
+  "category_id": 4,
+  "category_name": "Romance",
+  "parent_category_id": 0,
+  "tags": [
+   {
+    "id": 8,
+    "name": "Romance",
+    "type": 1,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A1%2C%22tag_id%22%3A8%2C%22order%22%3A%22hot%22%7D&title=Romance"
+   },
+   {
+    "id": 17,
+    "name": "CEO",
+    "type": 1,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A1%2C%22tag_id%22%3A17%2C%22order%22%3A%22hot%22%7D&title=CEO"
+   },
+   {
+    "id": 22,
+    "name": "Urban Romance",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A1%2C%22tag_id%22%3A22%2C%22order%22%3A%22hot%22%7D&title=Urban%20Romance"
+   },
+   {
+    "id": 80,
+    "name": "Sweet",
+    "type": 2,
+    "click_url": "mangatoon://list?paramsJSONString=%7B%22type%22%3A1%2C%22tag_id%22%3A80%2C%22order%22%3A%22hot%22%7D&title=Sweet"
+   }
+  ],
+  "first_episode": {
+   "id": 195858,
+   "title": "Episode 1"
+  },
+  "icon_titles": [
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/icon_hot.png",
+    "format_value": "113.0K"
+   },
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/icon_like.png",
+    "format_value": "3.53K"
+   },
+   {
+    "icon_url": "http://cn-e-pic.mangatoon.mobi/for-clients/episodes.png",
+    "format_value": "41"
+   }
+  ],
+  "subscript": "",
+  "subscript_default": "http://cn-e-pic.mangatoon.mobi/homepage_subscript/cartoon.png",
+  "image_url": "http://cn-e-pic.mangatoon.mobi/cartoon-posters/6121145b589.webp-posterup6",
+  "image_url_without_superscript": "http://cn-e-pic.mangatoon.mobi/cartoon-posters/6121145b589.webp",
+  "image_url_with_bottom_left_subscript": "http://cn-e-pic.mangatoon.mobi/cartoon-posters/6121145b589.webp",
+  "big_image_url": "http://cn-e-pic.mangatoon.mobi/cartoon-big-images/6121145/0-24fa.webp",
+  "big_image_urls": [
+   "http://cn-e-pic.mangatoon.mobi/cartoon-big-images/6121145/0-24fa.webp"
+  ],
+  "badge": {
+   "icon": "http://cn-e-pic.mangatoon.mobi/badge/ranking_tag.png",
+   "title": "Hottest No.1",
+   "show_in_detail": 1,
+   "click_url": "mangatoon://list-rank?ranking_topic_key=1"
+  },
+  "labels": [
+   {
+    "font_color": "#FA6400",
+    "title": "Hottest No.1"
+   }
+  ],
+  "share_url": "https://mangatoon.mobi/en/indulgent-gambit?content_id=6121145&app_id=1&utm_source=app_share&utm_campaign=Share:1:6121145",
+  "feedback_url": "mangatoon://weex/http://cn.e.pic.mangatoon.mobi/weex-js/client/feedback-create-release-v0-0-1477.js",
+  "is_blocked": false
+ }
+}

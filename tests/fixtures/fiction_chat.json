@@ -1,0 +1,485 @@
+{
+ "status": "success",
+ "timestamp": 1790600745,
+ "data": "https://en-f-pic.mangatoon.mobi/6067953/76866880/B.bin",
+ "next": {
+  "id": 4209295,
+  "title": "Chapter 2 ~",
+  "weight": 2,
+  "is_fee": false
+ },
+ "content_id": 6067953,
+ "type": 4,
+ "is_end": 0,
+ "should_show_ad": true,
+ "content_title": "The Legitimate Heir Doesn’T Want Their Love",
+ "content_image_url": "http://cn-e-pic.mangatoon.mobi/cartoon-posters/6067953e6d6.webp",
+ "comment_count": 22,
+ "like_count": 243,
+ "recommend_ticket_count": 165,
+ "reward_count": 16123,
+ "favorite_count": 1204,
+ "episode_id": 4209230,
+ "episode_title": "Chapter 1~",
+ "episode_weight": 1,
+ "content_type": 2,
+ "markdown_data_url": "",
+ "images": [
+  {
+   "image_path": "contribute/fiction/12770705/chatstory/55681826/17791668271.jpeg",
+   "width": 245,
+   "height": 368,
+   "image_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/chatstory/55681826/17791668271.jpeg-original600webp?sign=5f3590c1c11e9958cec9bdf85ced2754&t=6ac3a0a9"
+  }
+ ],
+ "media": [],
+ "characters": [
+  {
+   "id": 100397005,
+   "content_id": 6067953,
+   "type": 1,
+   "name": "Kim Taehyung (òre)",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17845573500.jpeg-s200webp?sign=d6bcf151ea333108a853afaec3d5138b&t=6ac3a0a9"
+  },
+  {
+   "id": 100397006,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Jeon Jungkook",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17791608842.jpeg-s200webp?sign=ec4f81f2b021641ddab118b88390bd54&t=6ac3a0a9"
+  },
+  {
+   "id": 100397007,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Kang Jennie",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17791609293.jpeg-s200webp?sign=2dd28b6640bab6686847957855d83dd4&t=6ac3a0a9"
+  },
+  {
+   "id": 100397008,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Kang Ye Jin",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17791609824.jpeg-s200webp?sign=15bc109508385b326cd4205f99d59d86&t=6ac3a0a9"
+  },
+  {
+   "id": 100397009,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Kang Hyunbin",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17791610375.jpeg-s200webp?sign=6323f56b7698991f4ae2825bd22245e4&t=6ac3a0a9"
+  },
+  {
+   "id": 100397010,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Kang Seo Joon",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17811673110.jpeg-s200webp?sign=783d2f76df533c5d499dafe0e4116e0e&t=6ac3a0a9"
+  },
+  {
+   "id": 100398911,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Isla Zainka",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17791667480.jpeg-s200webp?sign=b4aa5641213fdc2604d778ebc504f66a&t=6ac3a0a9"
+  },
+  {
+   "id": 100400384,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Su Rowoon",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17797911591.jpeg-s200webp?sign=3bbbe9d92be3fe8056f01178b5189d08&t=6ac3a0a9"
+  },
+  {
+   "id": 100400506,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Yonsei's students",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/f_106.webp"
+  },
+  {
+   "id": 100401090,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Taehyung ( Jungkook's soul)",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17845573691.jpeg-s200webp?sign=34026821ac40ea5b8a067de0f47b755d&t=6ac3a0a9"
+  },
+  {
+   "id": 100401091,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Jungkook (Taehyung's soul)",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17791715135.jpeg-s200webp?sign=122cfd5c2cbc49043ba207d27712e90c&t=6ac3a0a9"
+  },
+  {
+   "id": 100407227,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Teacher",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/f_107.webp"
+  },
+  {
+   "id": 100407584,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Shen Minwoo",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17791877460.jpeg-s200webp?sign=bd2651fad42a1a6f707cfd868cef8a29&t=6ac3a0a9"
+  },
+  {
+   "id": 100407588,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Lee Eujung",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17791877681.jpeg-s200webp?sign=4479d2b26885ccd847538dcbe5d9be7f&t=6ac3a0a9"
+  },
+  {
+   "id": 100434755,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "So Ha-neul",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17792689720.jpeg-s200webp?sign=ab9870a505decd6fdfd736990746d3b6&t=6ac3a0a9"
+  },
+  {
+   "id": 100462496,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Lou Xu",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17793490777.jpeg-s200webp?sign=3a548c2b53aebaaf20e82c75d32a0084&t=6ac3a0a9"
+  },
+  {
+   "id": 100462762,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Lu Renjia",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17793497058.jpeg-s200webp?sign=cd7f16cf29374e56c3be257e1beecd35&t=6ac3a0a9"
+  },
+  {
+   "id": 100462780,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Zhen Longtao",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17793497259.jpeg-s200webp?sign=b378b767535e558109216f61cafa2ffb&t=6ac3a0a9"
+  },
+  {
+   "id": 100549964,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Rong Xujia",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17795589430.jpeg-s200webp?sign=20e9d9997279e1269db2c9ef8bac6ba8&t=6ac3a0a9"
+  },
+  {
+   "id": 100645914,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Not important",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17797910580.jpeg-s200webp?sign=e84e25ff4c79d9343e9c4bf163d03bf7&t=6ac3a0a9"
+  },
+  {
+   "id": 100779825,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Brother Xiong",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17801070840.jpeg-s200webp?sign=514c25e035f8376f14a1efbccc025ff0&t=6ac3a0a9"
+  },
+  {
+   "id": 101170104,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Grandma Kim",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17809003570.jpeg-s200webp?sign=142414f5e0d9ea20e29f947174d18b18&t=6ac3a0a9"
+  },
+  {
+   "id": 101302655,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Jennie's Grandma",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/f_169.webp"
+  },
+  {
+   "id": 101336364,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Unknown",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/m_112.webp"
+  },
+  {
+   "id": 101336919,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Deyu",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17812387030.jpeg-s200webp?sign=410ffbce21c8e723aa3d238a5f12cb89&t=6ac3a0a9"
+  },
+  {
+   "id": 101438977,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Liu Yating",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17814413650.jpeg-s200webp?sign=e5fc02c95629adaed64a34cc8c44bd8a&t=6ac3a0a9"
+  },
+  {
+   "id": 102224803,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Li Xinning",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17843589720.jpeg-s200webp?sign=461b5bac6739fe11ebad17f7cf10993c&t=6ac3a0a9"
+  },
+  {
+   "id": 102875275,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Butler ",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17844412340.jpeg-s200webp?sign=4b40d16b8584860c9a1a1c40fbb3a61c&t=6ac3a0a9"
+  },
+  {
+   "id": 102875310,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Jeon Shin Hye",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17844412821.jpeg-s200webp?sign=c600cf3b0d648ff042eb6eb66d2c53b2&t=6ac3a0a9"
+  },
+  {
+   "id": 102875476,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "？？？",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/f_32.webp"
+  },
+  {
+   "id": 103935723,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Teacher ",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/f_157.webp"
+  },
+  {
+   "id": 103997706,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Unknown People",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17868496330.jpeg-s200webp?sign=355e3b3821b6c76bd05b423eb9d03898&t=6ac3a0a9"
+  },
+  {
+   "id": 104019506,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Lu Qichao",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17868874351.jpeg-s200webp?sign=44d8365660ca48a42dd363570d8445d5&t=6ac3a0a9"
+  },
+  {
+   "id": 104020181,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Coco",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17877120080.jpeg-s200webp?sign=1f3b89da107b97a0f3863075f3daf27e&t=6ac3a0a9"
+  },
+  {
+   "id": 104067859,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Park Shaoshu",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17869872973.jpeg-s200webp?sign=d211891100dc737df3291613ae91c107&t=6ac3a0a9"
+  },
+  {
+   "id": 104144271,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Park Shaochen",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17871625870.jpeg-s200webp?sign=34964dbf432fb5e3f678545c2965b8d4&t=6ac3a0a9"
+  },
+  {
+   "id": 104194575,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Kookie (Taetae)",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17872919840.jpeg-s200webp?sign=02117a33637e69df5f1ee494b29eacac&t=6ac3a0a9"
+  },
+  {
+   "id": 104209415,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Gu Jue ",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17873193120.jpeg-s200webp?sign=a0e1307b5a0cfaa4d87e30fb510edbf1&t=6ac3a0a9"
+  },
+  {
+   "id": 104288407,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Father Shen",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17875491502.jpeg-s200webp?sign=aaa53cdfa7884f0678ea671443e39c21&t=6ac3a0a9"
+  },
+  {
+   "id": 104288671,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Mother Shen",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17875491431.jpeg-s200webp?sign=a9a24156a1b7331008cf977486a25c7c&t=6ac3a0a9"
+  },
+  {
+   "id": 104295233,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Brother Zhang",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/m_147.webp"
+  },
+  {
+   "id": 104303759,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Huang Hua",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17875490040.jpeg-s200webp?sign=2f7afca8b748a03736c4893784d6e96b&t=6ac3a0a9"
+  },
+  {
+   "id": 104312882,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Mother So",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17875650170.jpeg-s200webp?sign=92638a1298d64e7dc59be45606808233&t=6ac3a0a9"
+  },
+  {
+   "id": 104337403,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Father So",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17876316810.jpeg-s200webp?sign=c3fc41899951f1b3cd5f099379597250&t=6ac3a0a9"
+  },
+  {
+   "id": 104346609,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Jeon Min-Ho",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17876487061.jpeg-s200webp?sign=66d124b9c3437955739748caef3e080e&t=6ac3a0a9"
+  },
+  {
+   "id": 104378131,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Frustrated Kookie ",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17877284320.jpeg-s200webp?sign=c97a3ee40d35d534f909dc8dca3b3da0&t=6ac3a0a9"
+  },
+  {
+   "id": 104790705,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Brother Zhang",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17888758110.jpeg-s200webp?sign=bf29694e23af27c6a145ea1bfd962c54&t=6ac3a0a9"
+  },
+  {
+   "id": 104790929,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Make-up artist ",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/f_156.webp"
+  },
+  {
+   "id": 104794476,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Netizens ",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17888839770.jpeg-s200webp?sign=1df2ca801c83842e6f9f6056288642c0&t=6ac3a0a9"
+  },
+  {
+   "id": 104858715,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Evalyn",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17891872980.jpeg-s200webp?sign=f52a064ab7380e476e3f122819809e73&t=6ac3a0a9"
+  },
+  {
+   "id": 104858970,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Can be anyone",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17891879700.jpeg-s200webp?sign=a46676ed9b9208822f579e5c2632892c&t=6ac3a0a9"
+  },
+  {
+   "id": 104859030,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Li Jinyou",
+   "status": 0,
+   "avatar_url": "http://up-pic.mangatoon.mobi/contribute/fiction/12770705/avatar/55681826/17891880811.jpeg-s200webp?sign=4f64c7bdce04cf94e4b31989623dc2cf&t=6ac3a0a9"
+  },
+  {
+   "id": 104894765,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Housekeeper",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/m_134.webp"
+  },
+  {
+   "id": 104976923,
+   "content_id": 6067953,
+   "type": 2,
+   "name": "Lawyer",
+   "status": 0,
+   "avatar_url": "http://cn-e-pic.mangatoon.mobi/official-character-avatars/m_149.webp"
+  }
+ ],
+ "file_size": 7155,
+ "open_episodes_count": 362,
+ "author_words": "",
+ "is_fee": false,
+ "advertise_contents": [],
+ "google_admob_urls": [
+  "https://mangatoon.id/en/watch/6067953/4209230"
+ ],
+ "google_admob_interstitial_urls": [
+  "https://mangatoon.id/en/watch/6067953/4209230"
+ ],
+ "is_liked": false,
+ "is_disliked": false,
+ "segment_infos": [],
+ "segment_version": 76866880
+}

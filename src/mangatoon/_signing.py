@@ -89,6 +89,9 @@ def _canonical_query(params: dict[str, ParamValue]) -> str:
 def compute_sign(path: str, params: dict[str, ParamValue]) -> str:
     """Compute the ``sign`` value for ``path`` and ``params``.
 
+    Any ``sign`` key already present in ``params`` is excluded, so passing back
+    a previously built mapping cannot change the result.
+
     Args:
         path: Request path beginning with ``/`` (host excluded).
         params: Parameters *excluding* ``sign``.
@@ -96,7 +99,8 @@ def compute_sign(path: str, params: dict[str, ParamValue]) -> str:
     Returns:
         Lowercase hex MD5 digest.
     """
-    payload = path + _canonical_query(params) + SIGNING_SALT
+    material = {key: value for key, value in params.items() if key != "sign"}
+    payload = path + _canonical_query(material) + SIGNING_SALT
     return hashlib.md5(payload.encode("utf-8")).hexdigest()
 
 

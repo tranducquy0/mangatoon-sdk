@@ -1,0 +1,45 @@
+{
+ "status": "success",
+ "timestamp": 1790600744,
+ "data": "https://en-f-pic.mangatoon.mobi/6067943/81176408/l.bin",
+ "next": {
+  "id": 4388680,
+  "title": "Chapter 2",
+  "weight": 2,
+  "is_fee": false
+ },
+ "content_id": 6067943,
+ "type": 2,
+ "is_end": 1,
+ "should_show_ad": true,
+ "content_title": "After the Storm, Evelyn",
+ "content_image_url": "http://cn-e-pic.mangatoon.mobi/fictions-posters/6067943c4fe.webp",
+ "comment_count": 1,
+ "like_count": 1,
+ "recommend_ticket_count": 0,
+ "reward_count": 0,
+ "favorite_count": 8,
+ "episode_id": 4388679,
+ "episode_title": "Chapter 1",
+ "episode_weight": 1,
+ "content_type": 1,
+ "markdown_data_url": "https://en-f-pic.mangatoon.mobi/6067943/81176408/l_md.bin",
+ "images": [],
+ "media": [],
+ "characters": [],
+ "file_size": 6909,
+ "open_episodes_count": 121,
+ "author_words": "",
+ "is_fee": false,
+ "advertise_contents": [],
+ "google_admob_urls": [
+  "https://mangatoon.id/en/watch/6067943/4388679"
+ ],
+ "google_admob_interstitial_urls": [
+  "https://mangatoon.id/en/watch/6067943/4388679"
+ ],
+ "is_liked": false,
+ "is_disliked": false,
+ "segment_infos": [],
+ "segment_version": 81176408
+}

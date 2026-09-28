@@ -1,0 +1,183 @@
+{
+ "status": "success",
+ "timestamp": 1790600746,
+ "data": [
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 100924,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/M.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 95836,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/7.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 74490,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/D.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 121494,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/x.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 70142,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/q.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 94084,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/T.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 98842,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/e.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 120236,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/8.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 84222,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/P.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 73284,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/Mp.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 63652,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/MM.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 71254,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/M7.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 46772,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/MD.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 75174,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/Mx.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 82296,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/Mq.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 182190,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/MT.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 70516,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/Me.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 75536,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/M8.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 80176,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/MP.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 71890,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/7p.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 53332,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/7M.webp"
+  },
+  {
+   "width": 1000,
+   "height": 1800,
+   "size": 96400,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/77.webp"
+  },
+  {
+   "width": 1000,
+   "height": 894,
+   "size": 32232,
+   "url": "http://en-c-pic.mangatoon.mobi/ps/1464942/encrypted/1000/7D.webp"
+  }
+ ],
+ "next": {
+  "id": 195859,
+  "title": "Episode 2",
+  "weight": 2,
+  "is_mature": false,
+  "pictures": [
+   {
+    "width": 1000,
+    "height": 1800,
+    "size": 69150,
+    "url": "http://en-c-pic.mangatoon.mobi/ps/1464943/encrypted/1000/S.webp"
+   }
+  ],
+  "is_fee": false
+ },
+ "content_id": 6121145,
+ "content_title": "Indulgent Gambit",
+ "content_image_url": "http://cn-e-pic.mangatoon.mobi/cartoon-posters/6121145b589.webp",
+ "should_show_ad": true,
+ "price": 25,
+ "episode_id": 195858,
+ "episode_title": "Episode 1",
+ "episode_weight": 1,
+ "like_count": 189,
+ "comment_count": 24,
+ "recommend_ticket_count": 72,
+ "reward_count": 2638,
+ "favorite_count": 882,
+ "horizontal_slip_mode": 0,
+ "is_fee": false,
+ "google_admob_urls": [
+  "https://mangatoon.id/en/watch/6121145/195858"
+ ],
+ "google_admob_interstitial_urls": [
+  "https://mangatoon.id/en/watch/6121145/195858"
+ ],
+ "is_liked": false,
+ "like_emoji_id": -1,
+ "like_emoji_count": 0
+}
